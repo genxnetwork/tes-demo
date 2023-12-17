@@ -5,7 +5,7 @@ Welcome to the GENXT TES server demo repository! This project showcases the use 
 
 Test TES server URL: [http://tesktest.genx.link/ga4gh/tes/v1/](http://tesktest.genx.link/ga4gh/tes/v1/)
 
-For detailed information about the TES API, refer to the [GA4GH Task Execution Service API documentation](https://github.com/ga4gh/task-execution-schemas).
+For detailed information about the TES API, refer to the [GA4GH Task Execution Service API documentation](https://ga4gh.github.io/task-execution-schemas/docs/).
 
 ## Repository Content
 This repository includes a demonstration script to run [GRAPE (Genomic RelAtedness detection PipelinE)](https://github.com/genxnetwork/grape) using the GENXT TES enabled computing service. GRAPE is an open-source tool for detecting genomic relatedness and requires a multisample VCF file as input. It also includes workflows for downloading and verifying reference datasets.
