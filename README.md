@@ -1,4 +1,4 @@
-# GENXT GA4GH TES enabled server demo repository
+# GENXT GA4GH TES server demo repository
 
 ## Introduction
 Welcome to the GENXT TES server demo repository! This project showcases the use of the Task Execution Service (TES) API, adhering to the GA4GH standard. The TES API facilitates the definition of batch execution tasks, including input files, Docker containers, commands, output files, and additional logging and metadata.
