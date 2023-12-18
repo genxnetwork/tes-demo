@@ -22,6 +22,13 @@ AWS_SECRET_ACCESS_KEY = "<Your_Secret_Access_Key>"
 AWS_REGION = "us-east-1"
 ```
 
+Configure your GENXT credentials:
+
+```python
+username = ''
+password = ''
+```
+
 ### Step 2: Initialize Task Data
 Create a JSON object for task data:
 
@@ -147,7 +154,7 @@ headers = {
    "accept": "application/json",
    "Content-Type": "application/json"
 }
-response = requests.post(url, headers=headers, data=json.dumps(task_data))
+response = requests.post(url, headers=headers, data=json.dumps(task_data), auth=HTTPBasicAuth(username, password))
 print("POST request response:", response.json())
 task_id = response.json().get("id")
 ```
@@ -161,7 +168,7 @@ headers = {
    "accept": "application/json",
    "Content-Type": "application/json"
 }
-response = requests.get(url, headers=headers)
+response = requests.get(url, headers=headers, auth=HTTPBasicAuth(username, password))
 print("GET request response:", response.json())
 ```
 
@@ -174,7 +181,7 @@ headers = {
    "accept": "application/json",
    "Content-Type": "application/json"
 }
-response = requests.get(url, headers=headers)
+response = requests.get(url, headers=headers, auth=HTTPBasicAuth(username, password))
 #print("GET request response:", response.json())
 all_tasks = response.json().get("tasks")
 for task in all_tasks:
