@@ -1,10 +1,15 @@
 import requests
 import json
+from requests.auth import HTTPBasicAuth
 
 # Define AWS S3 credentials and region
 AWS_ACCESS_KEY_ID = ""
 AWS_SECRET_ACCESS_KEY = ""
 AWS_REGION = "us-east-1"
+
+# Your GENXT credentials
+username = ''
+password = ''
 
 # Initialize JSON Data
 task_data = {
@@ -103,7 +108,7 @@ headers = {
     "accept": "application/json",
     "Content-Type": "application/json"
 }
-response = requests.post(url, headers=headers, data=json.dumps(task_data))
+response = requests.post(url, headers=headers, data=json.dumps(task_data), auth=HTTPBasicAuth(username, password))
 print("POST request response:", response.json())
 task_id = response.json().get("id")
 
@@ -113,7 +118,7 @@ headers = {
     "accept": "application/json",
     "Content-Type": "application/json"
 }
-response = requests.get(url, headers=headers)
+response = requests.get(url, headers=headers, auth=HTTPBasicAuth(username, password))
 print("GET request response:", response.json())
 
 # Requesting TES API - task list
@@ -122,7 +127,7 @@ headers = {
     "accept": "application/json",
     "Content-Type": "application/json"
 }
-response = requests.get(url, headers=headers)
+response = requests.get(url, headers=headers, auth=HTTPBasicAuth(username, password))
 all_tasks = response.json().get("tasks")
 for task in all_tasks:
     print(task)
