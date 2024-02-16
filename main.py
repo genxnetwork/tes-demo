@@ -103,7 +103,7 @@ task_data["executors"].append({
 # print(json.dumps(task_data, indent=4))
 
 # Requesting TES API - task creation
-url = "http://tesktest.genx.cloud/ga4gh/tes/v1/tasks"
+url = "http://tesktest.genxt.cloud/ga4gh/tes/v1/tasks"
 headers = {
     "accept": "application/json",
     "Content-Type": "application/json"
@@ -113,7 +113,7 @@ print("POST request response:", response.json())
 task_id = response.json().get("id")
 
 # Requesting TES API - task status
-url = f"http://tesktest.genx.cloud/ga4gh/tes/v1/tasks/{task_id}"
+url = f"http://tesktest.genxt.cloud/ga4gh/tes/v1/tasks/{task_id}"
 headers = {
     "accept": "application/json",
     "Content-Type": "application/json"
@@ -122,7 +122,7 @@ response = requests.get(url, headers=headers, auth=HTTPBasicAuth(username, passw
 print("GET request response:", response.json())
 
 # Requesting TES API - task list
-url = f"http://tesktest.genx.cloud/ga4gh/tes/v1/tasks"
+url = f"http://tesktest.genxt.cloud/ga4gh/tes/v1/tasks"
 headers = {
     "accept": "application/json",
     "Content-Type": "application/json"
