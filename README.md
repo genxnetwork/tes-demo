@@ -3,7 +3,7 @@
 ## Introduction
 Welcome to the GENXT TES server demo repository! This project showcases the use of the Task Execution Service (TES) API, adhering to the GA4GH standard. The TES API facilitates the definition of batch execution tasks, including input files, Docker containers, commands, output files, and additional logging and metadata.
 
-Test TES server URL: [http://tesktest.genx.link/ga4gh/tes/v1/](http://tesktest.genx.cloud/ga4gh/tes/v1/)
+Test TES server URL: [http://tesktest.genxt.cloud/ga4gh/tes/v1/](http://tesktest.genxt.cloud/ga4gh/tes/v1/)
 
 For detailed information about the TES API, refer to the [GA4GH Task Execution Service API documentation](https://ga4gh.github.io/task-execution-schemas/docs/).
 
@@ -149,7 +149,7 @@ task_data["executors"].append({
 Create a task using the POST /tasks endpoint with the following code:
 
 ```python
-url = "http://tesktest.genx.cloud/ga4gh/tes/v1/tasks"
+url = "http://tesktest.genxt.cloud/ga4gh/tes/v1/tasks"
 headers = {
    "accept": "application/json",
    "Content-Type": "application/json"
@@ -163,7 +163,7 @@ task_id = response.json().get("id")
 Monitor the status of your task using the GET /tasks/{task_id} endpoint:
 
 ```python
-url = f"http://tesktest.genx.cloud/ga4gh/tes/v1/tasks/{task_id}"
+url = f"http://tesktest.genxt.cloud/ga4gh/tes/v1/tasks/{task_id}"
 headers = {
    "accept": "application/json",
    "Content-Type": "application/json"
@@ -176,7 +176,7 @@ print("GET request response:", response.json())
 Retrieve a list of all tasks using the GET /tasks endpoint:
 
 ```python
-url = f"http://tesktest.genx.cloud/ga4gh/tes/v1/tasks"
+url = f"http://tesktest.genxt.cloud/ga4gh/tes/v1/tasks"
 headers = {
    "accept": "application/json",
    "Content-Type": "application/json"
