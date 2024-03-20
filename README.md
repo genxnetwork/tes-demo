@@ -13,13 +13,16 @@ This repository includes a demonstration script to run [GRAPE (Genomic RelAtedne
 ## Getting Started
 To utilize the script in this repository, follow these steps:
 
-### Step 1: Set AWS S3 Credentials
+### Step 1: Set AWS S3 Credentials and your private image registy credentials
 Configure your AWS S3 credentials and region for downloading input files and saving results:
 
 ```python
 AWS_ACCESS_KEY_ID = "<Your_Access_Key_ID>"
 AWS_SECRET_ACCESS_KEY = "<Your_Secret_Access_Key>"
 AWS_REGION = "us-east-1"
+DOCKER_REGISTRY = ""
+DOCKER_LOGIN = ""
+DOCKER_PASS = ""
 ```
 
 Configure your GENXT credentials:
@@ -74,6 +77,9 @@ Download the reference panel to Persistent volume /vol/a/ in the folder /media/r
 
 ```python
 task_data["executors"].append({
+   "docker_login": DOCKER_LOGIN,
+   "docker_pass": DOCKER_PASS,
+   "docker_registry": DOCKER_REGISTRY,
    "image": "genxnetwork/grape",
    "command": [
        "python",
@@ -91,6 +97,9 @@ task_data["executors"].append({
 Preprocess the input file with the following command:
 ```python
 task_data["executors"].append({
+   "docker_login": DOCKER_LOGIN,
+   "docker_pass": DOCKER_PASS,
+   "docker_registry": DOCKER_REGISTRY,
    "image": "genxnetwork/grape",
    "command": [
        "python",
@@ -114,6 +123,9 @@ Run the relatives search part of the GRAPE software using the IBIS flow:
 
 ```python
 task_data["executors"].append({
+   "docker_login": DOCKER_LOGIN,
+   "docker_pass": DOCKER_PASS,
+   "docker_registry": DOCKER_REGISTRY,
    "image": "genxnetwork/grape",
    "command": [
        "python",
