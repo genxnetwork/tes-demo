@@ -7,6 +7,10 @@ AWS_ACCESS_KEY_ID = ""
 AWS_SECRET_ACCESS_KEY = ""
 AWS_REGION = "us-east-1"
 
+DOCKER_REGISTRY = "docker.io"
+DOCKER_LOGIN = ""
+DOCKER_PASS = ""
+
 # Your GENXT credentials
 username = ''
 password = ''
@@ -40,6 +44,10 @@ task_data["executors"].append({
 
 # Running GRAPE software. Step 1: reference panel download 
 task_data["executors"].append({
+    "docker_login": DOCKER_LOGIN,
+    "docker_pass": DOCKER_PASS,
+    "docker_registry": DOCKER_REGISTRY,
+    
     "image": "genxnetwork/grape",
     "command": [
         "python",
@@ -54,6 +62,10 @@ task_data["executors"].append({
 
 # Running GRAPE software. Step 2: preprocessing of the input file 
 task_data["executors"].append({
+    "docker_login": DOCKER_LOGIN,
+    "docker_pass": DOCKER_PASS,
+    "docker_registry": DOCKER_REGISTRY,
+    
     "image": "genxnetwork/grape",
     "command": [
         "python",
@@ -73,6 +85,10 @@ task_data["executors"].append({
 
 # Running GRAPE software. Step 3: relatives search using IBIS flow 
 task_data["executors"].append({
+    "docker_login": DOCKER_LOGIN,
+    "docker_pass": DOCKER_PASS,
+    "docker_registry": DOCKER_REGISTRY,
+    
     "image": "genxnetwork/grape",
     "command": [
         "python",
